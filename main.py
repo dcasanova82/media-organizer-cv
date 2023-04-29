@@ -36,6 +36,13 @@ def md5(fname):
 
 
 def main():
+    def enable_dryrun():
+        dryrun = input("Do want to run in dry run? True or False?")
+        if dryrun == "True":
+            return True
+        if dryrun == "False":
+            return False
+
     for dir_path in dir_paths:
         listfiles(dir_path)
 
@@ -64,9 +71,8 @@ def main():
     for key, values in duplicated_checksum_files.items():
         if len(values) > 1:
             print('Removing file: ', values[-1])
-            # decision = input("Yes(y) or No(n)?")
-            # if decision == 'y':
-            os.remove(values[-1])
+            if not enable_dryrun():
+                os.remove(values[-1])
             f = open("duplicated_checksums.txt", "a")
             line = key + ':' + ','.join(values)
             f.write(line + "\n")
