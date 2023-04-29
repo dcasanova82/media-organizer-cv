@@ -1,7 +1,10 @@
 import os
 import hashlib
 # folder path
-dir_paths = [r'/Volumes/Public/Shared Pictures/', r'/Volumes/Public/dante.casanova/', r'/Volumes/Public/dantecasanova/']
+dir_paths = [r'/Volumes/Public/Shared Pictures/',
+             r'/Volumes/Public/dante.casanova/',
+             r'/Volumes/Public/dantecasanova/',
+             r'/Volumes/Public/LCA-3B/']
 media_files = {}
 flipped = {}
 duplicated_media_files = {}
